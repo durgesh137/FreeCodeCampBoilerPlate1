@@ -26,7 +26,14 @@ app.get('/',(request, response)=>{
  */
 app.use('/public', express.static(path.join(__dirname,'/public')));
 
-
+/**
+ * Task 5 server json as response, DONE
+ */
+app.get('/json', (request, response) => {
+    response.status(201).json({
+        "message" : "Hello json"
+    });
+});
 
 
 
