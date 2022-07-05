@@ -2,6 +2,16 @@ const express = require('express');
 const path = require('path');//to get path of html file
 const app = express();
 
+//using middleware
+app.use(logger);
+/**
+ * Task defining custom middleware
+ */
+function logger(request, response, next){
+    //to get HTTP method, url path, and ip address
+    console.log(request.method+" "+request.path+" - "+request.ip);
+    next();//since response not sent so forwarded to next
+}
 /**
  * Task 2 done, sending text with get request
  */
