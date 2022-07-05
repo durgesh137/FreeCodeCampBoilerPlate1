@@ -13,12 +13,18 @@ const app = express();
  * Task 3, serve html file, done
  */
 app.get('/',(request, response)=>{
-    console.log(path.join(__dirname));
+    // console.log(path.join(__dirname));
     response.status(200).sendFile(path.join(__dirname,"/views/index.html"));
 });
 
-
-
+/**
+ * Task 4, serving static data
+ * using express.static as middleware.
+ * => /public is path, which is optional
+ * => if path not given, then it will execute for each request
+ * 
+ */
+app.use('/public', express.static(path.join(__dirname,'/public')));
 
 
 
