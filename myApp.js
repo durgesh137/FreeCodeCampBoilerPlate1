@@ -1,8 +1,12 @@
 let express = require('express');
 let app = express();
 
-console.log('Hello World');
 
+app.get('/',(request, response)=>{
+    console.log('Hello World');
+    response.status(200).send("Hello World");
+  })
+  
 
 
 
